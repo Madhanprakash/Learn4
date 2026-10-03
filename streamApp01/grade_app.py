@@ -21,3 +21,7 @@ if st.session_state.students:
 
     average_mark = sum(student["Mark"] for student in st.session_state.students) / len(st.session_state.students)
     st.metric("Average mark", f"{average_mark:.1f}")
+    st.metric("Total students", len(st.session_state.students))
+    st.metric("Highest mark", max(student["Mark"] for student in st.session_state.students))
+    st.metric("Lowest mark", min(student["Mark"] for student in st.session_state.students))
+    
